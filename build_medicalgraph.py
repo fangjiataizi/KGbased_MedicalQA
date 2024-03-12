@@ -12,11 +12,11 @@ class MedicalGraph:
     def __init__(self):
         cur_dir = '/'.join(os.path.abspath(__file__).split('/')[:-1])
         self.data_path = os.path.join(cur_dir, 'data/medical.json')
+
         self.g = Graph(
-            host="127.0.0.1",  # neo4j 搭载服务器的ip地址，ifconfig可获取到
-            http_port=7474,  # neo4j 服务器监听的端口号
-            user="lhy",  # 数据库user name，如果没有更改过，应该是neo4j
-            password="lhy123")
+            "neo4j+s://a1e28212.databases.neo4j.io",  # neo4j服务器的地址
+            user="neo4j",  # 数据库用户名
+            password="j1Z-JLr04Zq3cZSAFfSNqTRm4xZ5xDPxG-zjOVbmKWw")  # 数据库密码
 
     '''读取文件'''
     def read_nodes(self):
