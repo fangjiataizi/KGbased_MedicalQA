@@ -12,7 +12,6 @@ class MedicalGraph:
     def __init__(self):
         cur_dir = '/'.join(os.path.abspath(__file__).split('/')[:-1])
         self.data_path = os.path.join(cur_dir, 'data/medical.json')
-
         self.g = Graph(
             "neo4j+s://a1e28212.databases.neo4j.io",  # neo4j服务器的地址
             user="neo4j",  # 数据库用户名
@@ -174,6 +173,7 @@ class MedicalGraph:
                         easy_get=disease_dict['easy_get'],cure_lasttime=disease_dict['cure_lasttime'],
                         cure_department=disease_dict['cure_department']
                         ,cure_way=disease_dict['cure_way'] , cured_prob=disease_dict['cured_prob'])
+            print(node)
             self.g.create(node)
             count += 1
             print(count)
